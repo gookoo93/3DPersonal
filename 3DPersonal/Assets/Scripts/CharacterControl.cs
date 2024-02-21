@@ -14,7 +14,7 @@ public class CharacterControl : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // 마우스 입력을 받았 을 때
         if (Input.GetMouseButtonUp(0))
