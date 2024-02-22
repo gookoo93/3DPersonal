@@ -23,6 +23,7 @@ public class CharacterControl : MonoBehaviour
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10000f))
+
             {
                 targetPos = hit.point;
 
