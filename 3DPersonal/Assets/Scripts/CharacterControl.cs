@@ -27,23 +27,22 @@ public class CharacterControl : MonoBehaviour
             {
                 targetPos = hit.point;
 
-                Debug.Log("이동");
             }
         }
 
+        /*
         // 캐릭터가 움직이고 있다면
         if (behavior.Run(targetPos))
         {
             // 회전도 같이 시켜준다
-            behavior.Turn(targetPos);
-                Debug.Log("회전");
+            //behavior.Turn(targetPos);
         }
         else
         {
-                Debug.Log("정지");
             // 캐릭터 애니메이션(정지 상태)
             //behavior.SetAnim(PlayerAnim.ANIM_IDLE);
         }
+         */
 
     }
 }
