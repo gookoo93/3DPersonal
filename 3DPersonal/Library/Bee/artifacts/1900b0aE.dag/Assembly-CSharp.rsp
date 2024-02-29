@@ -112,6 +112,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
@@ -320,9 +321,10 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
--r:"D:/Git/3DPersonal/3DPersonal/3DPersonal/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"D:/Git/3DPersonal/3DPersonal/3DPersonal/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"E:/3DPersonal/3DPersonal/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"E:/3DPersonal/3DPersonal/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
@@ -345,12 +347,22 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/Behavior.cs"
+"Assets/AnimAsset/Crafting Mecanim Animation Pack FREE/Code/CrafterControllerFREE.cs"
+"Assets/AnimAsset/Crafting Mecanim Animation Pack FREE/Code/IKHands.cs"
+"Assets/AnimAsset/Crafting Mecanim Animation Pack FREE/Code/SmoothFollow.cs"
 "Assets/Scripts/CameraController.cs"
-"Assets/Scripts/CameraController1.cs"
-"Assets/Scripts/CameraMove.cs"
-"Assets/Scripts/CharacterControl.cs"
-"Assets/Scripts/PlayerCamera.cs"
+"Assets/Scripts/Enemy/EnemyFOV.cs"
+"Assets/Scripts/Enemy/EnemyMaster.cs"
+"Assets/Scripts/Enemy/FieldOfView.cs"
+"Assets/Scripts/Enemy/FieldOfViewEditor.cs"
+"Assets/Scripts/Object/MoveObject.cs"
+"Assets/Scripts/PlayerScript/Player1.cs"
+"Assets/Scripts/PlayerScript/Player2.cs"
+"Assets/Scripts/PlayerScript/Player3.cs"
+"Assets/Scripts/PlayerScript/Player4.cs"
+"Assets/Scripts/PlayerScript/Player5.cs"
+"Assets/Scripts/PlayerScript/PlayerMaster.cs"
+"Assets/Scripts/PlayerScript/PlayerStat.cs"
 -langversion:9.0
 
 /deterministic
