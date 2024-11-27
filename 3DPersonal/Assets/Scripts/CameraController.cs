@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -121,6 +118,7 @@ public class CameraController : MonoBehaviour
                             // 새로운 오브젝트가 선택되었을 때
                             choicePlayer = hit.collider.gameObject; // 현재 선택된 오브젝트를 업데이트
                             Debug.Log(choicePlayer.name + " 선택됨");
+
                         }
                         else
                         {
@@ -140,6 +138,7 @@ public class CameraController : MonoBehaviour
                         // 첫 번째 클릭이 아닌 경우(즉, 초기 상태에서 오브젝트를 선택했을 때)
                         clickCount = 1;
                         choicePlayer = hit.collider.gameObject;
+
                         beforePlayer = choicePlayer; // beforePlayer와 choicePlayer를 현재 선택된 오브젝트로 설정
                         Debug.Log(choicePlayer.name + " 선택됨");
                     }
@@ -161,13 +160,23 @@ public class CameraController : MonoBehaviour
             Plane plane = new Plane(Vector3.up, Vector3.zero);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            float entry;
+            // "Ground"와 "Default" 레이어에만 반응하도록 레이어 마스크 설정
+            int layerMask = ~(LayerMask.GetMask("Player", "Enemy" , "Object", "DeadBody"));
 
+            float entry;
+             
             if (plane.Raycast(ray, out entry))
             {
                 dragCurrentPosition = ray.GetPoint(entry);
 
+                // 레이어 마스크를 적용하여 레이캐스트
+                if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+                {
+                    dragCurrentPosition = ray.GetPoint(entry); // 실제 레이캐스트 충돌 지점을 사용
+                }
+
                 newPosition = transform.position + dragStartPosition - dragCurrentPosition;
+                // newPosition을 사용하여 오브젝트 위치 업데이트 등의 추가 작업을 수행
             }
         }
 
@@ -303,13 +312,13 @@ public class CameraController : MonoBehaviour
     void HandleZoomAndReset()
     {
         // 줌 제한 적용
-        newZoom.y = Mathf.Clamp(newZoom.y, 50, 200);
-        newZoom.z = Mathf.Clamp(newZoom.z, -200, -50); // 줌 값은 일반적으로 음수입니다.
+        newZoom.y = Mathf.Clamp(newZoom.y, 100, 500);
+        newZoom.z = Mathf.Clamp(newZoom.z, -500, -100); // 줌 값은 일반적으로 음수입니다.
 
         // W 키를 누르면 기본 줌값과 회전값으로 리셋
         if (Input.GetKeyDown(KeyCode.W))
         {
-            newZoom = new Vector3(0, 50, -50); // 기본 줌값으로 설정
+            newZoom = new Vector3(0, 200, -200); // 기본 줌값으로 설정
             newRotation = Quaternion.Euler(0, 45, 0); // 기본 회전값으로 설정
         }
     }
